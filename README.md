@@ -45,8 +45,7 @@ VNC for you, and have any specific client logic needed. Sounds good I think!<br>
 
 Context: Seems like MacOS does not have traditional linux /dev/input devices for keyboard, so trying to do keyboard remapping is difficult in this sense<br>
 Q4: How tf can you remap keys??<br>
-Ideas: To remap the key events sent over VNC (using the RFB - remote fram buffer protocol). Check here for a specification: <https://github.com/rfbproto/rfbproto/blob/master/rfbproto.rst#744keyevent>. I'm thinking to use iptables and something like [NetSed and iptables proxying](https://serverfault.com/a/321671).
-This may have to be done client side to map the players as specified in Q3. <br>
+Ideas: To remap the key events sent over VNC (using the RFB - remote fram buffer protocol), one can modify the bytes over the network. Check here for a specification: <https://github.com/rfbproto/rfbproto/blob/master/rfbproto.rst#744keyevent>. I've come across a tool called netsed which can be used as such: [NetSed and iptables proxying](https://serverfault.com/a/321671). The client connects to netsed on the client side, which acts as a proxy and modifies the tcp packets and sends them to the server. <br>
 
 Q5: How can this be abstracted for more emulators in the future?<br>
 Ideas: Great question... TBD!
