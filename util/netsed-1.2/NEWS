@@ -1,0 +1,54 @@
+2013-10-11; netsed 1.2:
+  - new feature from Mats Erik Anersson:
+    - Direction dependant rules.
+
+2012-08-15; netsed 1.1:
+  - several fix from Mats Erik Anersson:
+    - Let Makefile use externally exported CFLAGS.
+    - Make the macro LINUX_NETFILTER be conditionally active.
+    - Allow traditionally delimited rules.
+    - Regulate dual-stacking of listener.
+    - Linking flag needed for OpenSolaris.
+    - Fix for option IPV6_V6ONLY.
+  - License clarification.
+  - Implemented options to force IP version 4 or 6.
+  - Added long options --ipv4, --ipv6 and --ipany.
+  - Changed help display.
+  - Adjust to changes in the Ruby 1.9 require syntax. By Sven Hoexter
+
+2010-09-02; netsed 1.00b:
+  - Transparent proxy mode for netfilter (linux 2.4 and 2.6)
+
+2010-07-15; netsed 1.00a:
+  - major architecture rework:
+    - only one process is needed
+    - added tracking connection structure
+    - all receive sockets are select()ed
+    - udp is implemented
+  - improved tests.
+  - added developers documentation in source code (doxygen) 
+
+2010-07-02, netsed 0.02c:
+  - added a test suite in test directory
+  - catching ctrl-C and closing sockets:
+    - to do that I also used a select for the listening socket, getting rid of
+      the usleep call ;)
+    - this also improve batch tests as it wont wait for some timeout to reuse
+      the socket.
+
+2010-06-19, netsed 0.02b:
+  - imported patches from '#397420' :
+    - IPv6 compatible reimplentation of resolving code
+    - some minor other changes
+
+2010-06-19, netsed 0.02a:
+  - detecting client/server disconnection (not only on write fail)
+  - using select in treatment process to avoid useless cpu load 'Debian Bug #586037'
+  - resolving rhost address if needed 'Debian Bug #397420'
+  - rule replacement was replacing all occurence of any rule,
+    but will leave 1 char between any rule match,
+    fixed to replace all occurence of the rules directly.
+
+someday, netsed 0.01c:
+  - last available netsed version taken from debian archive.
+
