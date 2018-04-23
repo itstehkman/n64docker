@@ -12,7 +12,11 @@ make run
 
 # How to connect
 
-Connect over VNC to $SERVER_ADDR:5901 to view the n64 display and interact with it!
+Run
+```
+make run-client
+```
+To run your client and connect to the localhost (which acts as a transparent proxy, and modifies network traffic), over VNC on port 5901 to view the n64 display and interact with it! You can do this with Screen Sharing (built in app on MacOS)
 
 # Super Smash Bros
 

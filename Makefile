@@ -30,5 +30,4 @@ stop-client:
 	docker rm $(CLIENT_CONTAINER_NAME)
 
 stop:
-	docker rm $(CLIENT_CONTAINER_NAME)
-	docker rm $(SERVER_CONTAINER_NAME)
+	docker rm $(CLIENT_CONTAINER_NAME) || docker rm $(SERVER_CONTAINER_NAME)

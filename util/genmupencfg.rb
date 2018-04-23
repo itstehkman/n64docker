@@ -11,7 +11,7 @@ name = \"Keyboard\"
 # Specifies whether this controller is 'plugged in' to the simulated N64
 plugged = True
 # Specifies which type of expansion pak is in the controller: 1=None, 2=Mem pak, 5=Rumble pak
-plugin = 2
+plugin = 1
 # If True, then mouse buttons may be used with this controller
 mouse = False
 # Scaling factor for mouse movements.  For X, Y axes.
@@ -35,8 +35,8 @@ C Button D = \"key(%d)\"
 C Button U = \"key(%d)\"
 R Trig = \"key(%d)\"
 L Trig = \"key(%d)\"
-Mempak switch = \"key(44)\"
-Rumblepak switch = \"key(46)\"
+Mempak switch = \"\"
+Rumblepak switch = \"\"
 # Analog axis configuration mappings
 X Axis = \"key(%d,%d)\"
 Y Axis = \"key(%d,%d)\"
