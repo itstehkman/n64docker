@@ -4,12 +4,14 @@ RUN apt-get update
 
 RUN apt-get install -y gcc make
 
+RUN apt-get install -y ruby
+
 COPY util/netsed-1.2 /netsed-1.2
 
 RUN cd /netsed-1.2 && make install
 
 EXPOSE 5900
 
-COPY util/proxy.sh /
+COPY util/proxy.sh util/gensed.rb config/keysym-translation.json /
 
 CMD ./proxy.sh
