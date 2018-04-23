@@ -20,7 +20,7 @@ original_keys = {
   "down": {"sdl_keycode": 0x112, "x11_keysym": 0xff54},
   "left": {"sdl_keycode": 0x114, "x11_keysym": 0xff51},
   "right": {"sdl_keycode": 0x113, "x11_keysym": 0xff53},
-  "enter": {"sdl_keycode": 0x10f, "x11_keysym": 0xff0d},
+  "enter": {"sdl_keycode": 0xd, "x11_keysym": 0xff0d},
 }
 
 
@@ -38,12 +38,12 @@ def player_config(original_keys, keycodes_enum, sdl_keycodes_to_x11keycodes)
   config
 end
 
-sdl_keycodes = File.readlines("../config/sdlkeycodes")
+sdl_keycodes = File.readlines("./config/sdlkeycodes")
 sdl_keycodes = sdl_keycodes.map{|n| n.strip.chomp.split("u,")[0].to_i(16)}
 sdl_keycodes = sdl_keycodes.select{|n| !reserved.include? n}
 
 # Most x11 key codes match, but here are some that dont (which is good enough)
-sdl_keycodes_to_x11keycodes = File.read('../config/sdlkeycodes2x11keysyms.json')
+sdl_keycodes_to_x11keycodes = File.read('./config/sdlkeycodes2x11keysyms.json')
 # keys and vals are in hex (without 0x, for easy keying)
 sdl_keycodes_to_x11keycodes = JSON.parse(sdl_keycodes_to_x11keycodes)
 

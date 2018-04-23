@@ -1,4 +1,4 @@
-.PHONY: build run run-client mupen-config client-config
+.PHONY: build run run-client mupen-config client-config stop-client stop
 
 BASH := $(shell which bash)
 SHELL := $(BASH)
@@ -10,9 +10,10 @@ include .env
 	echo " " > .network
 
 mupen-config:
-	echo haha
+	ruby util/gentranslation.rb > config/keysym-translation.json
+	ruby util/genmupencfg.rb > config/mupen64plus.cfg
 
-build:
+build: mupen-config
 	docker build -t $(SERVER_IMAGE_NAME) . -f Dockerfile.server
 	docker build -t $(CLIENT_IMAGE_NAME) . -f Dockerfile.client
 
@@ -27,3 +28,7 @@ run-bash:
 
 stop-client:
 	docker rm $(CLIENT_CONTAINER_NAME)
+
+stop:
+	docker rm $(CLIENT_CONTAINER_NAME)
+	docker rm $(SERVER_CONTAINER_NAME)

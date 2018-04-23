@@ -172,7 +172,7 @@
     },
     "enter": {
       "original": {
-        "sdl_keycode": 271,
+        "sdl_keycode": 13,
         "x11_keysym": 65293
       },
       "replacement": {
@@ -354,7 +354,7 @@
     },
     "enter": {
       "original": {
-        "sdl_keycode": 271,
+        "sdl_keycode": 13,
         "x11_keysym": 65293
       },
       "replacement": {
@@ -536,7 +536,7 @@
     },
     "enter": {
       "original": {
-        "sdl_keycode": 271,
+        "sdl_keycode": 13,
         "x11_keysym": 65293
       },
       "replacement": {
@@ -718,7 +718,7 @@
     },
     "enter": {
       "original": {
-        "sdl_keycode": 271,
+        "sdl_keycode": 13,
         "x11_keysym": 65293
       },
       "replacement": {

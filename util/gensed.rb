@@ -13,7 +13,7 @@ PLAYER_NUM = ENV.fetch("PLAYER_NUM", "1")
 
 # \x04 = key event code, \x00 = off, 2 bytes padding (usually null bytes), 4 bytes keysym (network order -> big endian)
 off_format = "s/%%04%%00%%00%%00%%00%%00%s/%%04%%00%%00%%00%%00%%00%s"
-on_format =  "s/%%04%%00%%00%%01%%00%%00%s/%%04%%00%%00%%01%%00%%00%s"
+on_format =  "s/%%04%%01%%00%%00%%00%%00%s/%%04%%01%%00%%00%%00%%00%s"
 
 def netsed_short_str(i)
   x = "%04x" % i
