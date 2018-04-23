@@ -1,0 +1,730 @@
+{
+  "1": {
+    "w": {
+      "original": {
+        "sdl_keycode": 119,
+        "x11_keysym": 119
+      },
+      "replacement": {
+        "sdl_keycode": 97,
+        "x11_keysym": 97
+      }
+    },
+    "a": {
+      "original": {
+        "sdl_keycode": 97,
+        "x11_keysym": 97
+      },
+      "replacement": {
+        "sdl_keycode": 98,
+        "x11_keysym": 98
+      }
+    },
+    "s": {
+      "original": {
+        "sdl_keycode": 115,
+        "x11_keysym": 115
+      },
+      "replacement": {
+        "sdl_keycode": 99,
+        "x11_keysym": 99
+      }
+    },
+    "d": {
+      "original": {
+        "sdl_keycode": 100,
+        "x11_keysym": 100
+      },
+      "replacement": {
+        "sdl_keycode": 100,
+        "x11_keysym": 100
+      }
+    },
+    "i": {
+      "original": {
+        "sdl_keycode": 105,
+        "x11_keysym": 105
+      },
+      "replacement": {
+        "sdl_keycode": 101,
+        "x11_keysym": 101
+      }
+    },
+    "j": {
+      "original": {
+        "sdl_keycode": 106,
+        "x11_keysym": 106
+      },
+      "replacement": {
+        "sdl_keycode": 103,
+        "x11_keysym": 103
+      }
+    },
+    "k": {
+      "original": {
+        "sdl_keycode": 107,
+        "x11_keysym": 107
+      },
+      "replacement": {
+        "sdl_keycode": 104,
+        "x11_keysym": 104
+      }
+    },
+    "l": {
+      "original": {
+        "sdl_keycode": 108,
+        "x11_keysym": 108
+      },
+      "replacement": {
+        "sdl_keycode": 105,
+        "x11_keysym": 105
+      }
+    },
+    "z": {
+      "original": {
+        "sdl_keycode": 122,
+        "x11_keysym": 122
+      },
+      "replacement": {
+        "sdl_keycode": 106,
+        "x11_keysym": 106
+      }
+    },
+    "x": {
+      "original": {
+        "sdl_keycode": 120,
+        "x11_keysym": 120
+      },
+      "replacement": {
+        "sdl_keycode": 107,
+        "x11_keysym": 107
+      }
+    },
+    "c": {
+      "original": {
+        "sdl_keycode": 99,
+        "x11_keysym": 99
+      },
+      "replacement": {
+        "sdl_keycode": 108,
+        "x11_keysym": 108
+      }
+    },
+    "lshift": {
+      "original": {
+        "sdl_keycode": 304,
+        "x11_keysym": 65505
+      },
+      "replacement": {
+        "sdl_keycode": 110,
+        "x11_keysym": 110
+      }
+    },
+    "lctrl": {
+      "original": {
+        "sdl_keycode": 306,
+        "x11_keysym": 65507
+      },
+      "replacement": {
+        "sdl_keycode": 111,
+        "x11_keysym": 111
+      }
+    },
+    "up": {
+      "original": {
+        "sdl_keycode": 273,
+        "x11_keysym": 65362
+      },
+      "replacement": {
+        "sdl_keycode": 113,
+        "x11_keysym": 113
+      }
+    },
+    "down": {
+      "original": {
+        "sdl_keycode": 274,
+        "x11_keysym": 65364
+      },
+      "replacement": {
+        "sdl_keycode": 114,
+        "x11_keysym": 114
+      }
+    },
+    "left": {
+      "original": {
+        "sdl_keycode": 276,
+        "x11_keysym": 65361
+      },
+      "replacement": {
+        "sdl_keycode": 115,
+        "x11_keysym": 115
+      }
+    },
+    "right": {
+      "original": {
+        "sdl_keycode": 275,
+        "x11_keysym": 65363
+      },
+      "replacement": {
+        "sdl_keycode": 116,
+        "x11_keysym": 116
+      }
+    },
+    "enter": {
+      "original": {
+        "sdl_keycode": 271,
+        "x11_keysym": 65293
+      },
+      "replacement": {
+        "sdl_keycode": 117,
+        "x11_keysym": 117
+      }
+    }
+  },
+  "2": {
+    "w": {
+      "original": {
+        "sdl_keycode": 119,
+        "x11_keysym": 119
+      },
+      "replacement": {
+        "sdl_keycode": 118,
+        "x11_keysym": 118
+      }
+    },
+    "a": {
+      "original": {
+        "sdl_keycode": 97,
+        "x11_keysym": 97
+      },
+      "replacement": {
+        "sdl_keycode": 119,
+        "x11_keysym": 119
+      }
+    },
+    "s": {
+      "original": {
+        "sdl_keycode": 115,
+        "x11_keysym": 115
+      },
+      "replacement": {
+        "sdl_keycode": 120,
+        "x11_keysym": 120
+      }
+    },
+    "d": {
+      "original": {
+        "sdl_keycode": 100,
+        "x11_keysym": 100
+      },
+      "replacement": {
+        "sdl_keycode": 121,
+        "x11_keysym": 121
+      }
+    },
+    "i": {
+      "original": {
+        "sdl_keycode": 105,
+        "x11_keysym": 105
+      },
+      "replacement": {
+        "sdl_keycode": 122,
+        "x11_keysym": 122
+      }
+    },
+    "j": {
+      "original": {
+        "sdl_keycode": 106,
+        "x11_keysym": 106
+      },
+      "replacement": {
+        "sdl_keycode": 49,
+        "x11_keysym": 49
+      }
+    },
+    "k": {
+      "original": {
+        "sdl_keycode": 107,
+        "x11_keysym": 107
+      },
+      "replacement": {
+        "sdl_keycode": 50,
+        "x11_keysym": 50
+      }
+    },
+    "l": {
+      "original": {
+        "sdl_keycode": 108,
+        "x11_keysym": 108
+      },
+      "replacement": {
+        "sdl_keycode": 51,
+        "x11_keysym": 51
+      }
+    },
+    "z": {
+      "original": {
+        "sdl_keycode": 122,
+        "x11_keysym": 122
+      },
+      "replacement": {
+        "sdl_keycode": 52,
+        "x11_keysym": 52
+      }
+    },
+    "x": {
+      "original": {
+        "sdl_keycode": 120,
+        "x11_keysym": 120
+      },
+      "replacement": {
+        "sdl_keycode": 53,
+        "x11_keysym": 53
+      }
+    },
+    "c": {
+      "original": {
+        "sdl_keycode": 99,
+        "x11_keysym": 99
+      },
+      "replacement": {
+        "sdl_keycode": 54,
+        "x11_keysym": 54
+      }
+    },
+    "lshift": {
+      "original": {
+        "sdl_keycode": 304,
+        "x11_keysym": 65505
+      },
+      "replacement": {
+        "sdl_keycode": 55,
+        "x11_keysym": 55
+      }
+    },
+    "lctrl": {
+      "original": {
+        "sdl_keycode": 306,
+        "x11_keysym": 65507
+      },
+      "replacement": {
+        "sdl_keycode": 56,
+        "x11_keysym": 56
+      }
+    },
+    "up": {
+      "original": {
+        "sdl_keycode": 273,
+        "x11_keysym": 65362
+      },
+      "replacement": {
+        "sdl_keycode": 57,
+        "x11_keysym": 57
+      }
+    },
+    "down": {
+      "original": {
+        "sdl_keycode": 274,
+        "x11_keysym": 65364
+      },
+      "replacement": {
+        "sdl_keycode": 48,
+        "x11_keysym": 48
+      }
+    },
+    "left": {
+      "original": {
+        "sdl_keycode": 276,
+        "x11_keysym": 65361
+      },
+      "replacement": {
+        "sdl_keycode": 13,
+        "x11_keysym": 65293
+      }
+    },
+    "right": {
+      "original": {
+        "sdl_keycode": 275,
+        "x11_keysym": 65363
+      },
+      "replacement": {
+        "sdl_keycode": 8,
+        "x11_keysym": 65288
+      }
+    },
+    "enter": {
+      "original": {
+        "sdl_keycode": 271,
+        "x11_keysym": 65293
+      },
+      "replacement": {
+        "sdl_keycode": 9,
+        "x11_keysym": 65289
+      }
+    }
+  },
+  "3": {
+    "w": {
+      "original": {
+        "sdl_keycode": 119,
+        "x11_keysym": 119
+      },
+      "replacement": {
+        "sdl_keycode": 32,
+        "x11_keysym": 32
+      }
+    },
+    "a": {
+      "original": {
+        "sdl_keycode": 97,
+        "x11_keysym": 97
+      },
+      "replacement": {
+        "sdl_keycode": 45,
+        "x11_keysym": 45
+      }
+    },
+    "s": {
+      "original": {
+        "sdl_keycode": 115,
+        "x11_keysym": 115
+      },
+      "replacement": {
+        "sdl_keycode": 61,
+        "x11_keysym": 61
+      }
+    },
+    "d": {
+      "original": {
+        "sdl_keycode": 100,
+        "x11_keysym": 100
+      },
+      "replacement": {
+        "sdl_keycode": 92,
+        "x11_keysym": 92
+      }
+    },
+    "i": {
+      "original": {
+        "sdl_keycode": 105,
+        "x11_keysym": 105
+      },
+      "replacement": {
+        "sdl_keycode": 59,
+        "x11_keysym": 59
+      }
+    },
+    "j": {
+      "original": {
+        "sdl_keycode": 106,
+        "x11_keysym": 106
+      },
+      "replacement": {
+        "sdl_keycode": 44,
+        "x11_keysym": 44
+      }
+    },
+    "k": {
+      "original": {
+        "sdl_keycode": 107,
+        "x11_keysym": 107
+      },
+      "replacement": {
+        "sdl_keycode": 46,
+        "x11_keysym": 46
+      }
+    },
+    "l": {
+      "original": {
+        "sdl_keycode": 108,
+        "x11_keysym": 108
+      },
+      "replacement": {
+        "sdl_keycode": 301,
+        "x11_keysym": 65509
+      }
+    },
+    "z": {
+      "original": {
+        "sdl_keycode": 122,
+        "x11_keysym": 122
+      },
+      "replacement": {
+        "sdl_keycode": 282,
+        "x11_keysym": 65470
+      }
+    },
+    "x": {
+      "original": {
+        "sdl_keycode": 120,
+        "x11_keysym": 120
+      },
+      "replacement": {
+        "sdl_keycode": 283,
+        "x11_keysym": 65471
+      }
+    },
+    "c": {
+      "original": {
+        "sdl_keycode": 99,
+        "x11_keysym": 99
+      },
+      "replacement": {
+        "sdl_keycode": 284,
+        "x11_keysym": 65472
+      }
+    },
+    "lshift": {
+      "original": {
+        "sdl_keycode": 304,
+        "x11_keysym": 65505
+      },
+      "replacement": {
+        "sdl_keycode": 285,
+        "x11_keysym": 65473
+      }
+    },
+    "lctrl": {
+      "original": {
+        "sdl_keycode": 306,
+        "x11_keysym": 65507
+      },
+      "replacement": {
+        "sdl_keycode": 287,
+        "x11_keysym": 65475
+      }
+    },
+    "up": {
+      "original": {
+        "sdl_keycode": 273,
+        "x11_keysym": 65362
+      },
+      "replacement": {
+        "sdl_keycode": 289,
+        "x11_keysym": 65477
+      }
+    },
+    "down": {
+      "original": {
+        "sdl_keycode": 274,
+        "x11_keysym": 65364
+      },
+      "replacement": {
+        "sdl_keycode": 292,
+        "x11_keysym": 65480
+      }
+    },
+    "left": {
+      "original": {
+        "sdl_keycode": 276,
+        "x11_keysym": 65361
+      },
+      "replacement": {
+        "sdl_keycode": 19,
+        "x11_keysym": 65299
+      }
+    },
+    "right": {
+      "original": {
+        "sdl_keycode": 275,
+        "x11_keysym": 65363
+      },
+      "replacement": {
+        "sdl_keycode": 277,
+        "x11_keysym": 65379
+      }
+    },
+    "enter": {
+      "original": {
+        "sdl_keycode": 271,
+        "x11_keysym": 65293
+      },
+      "replacement": {
+        "sdl_keycode": 278,
+        "x11_keysym": 65360
+      }
+    }
+  },
+  "4": {
+    "w": {
+      "original": {
+        "sdl_keycode": 119,
+        "x11_keysym": 119
+      },
+      "replacement": {
+        "sdl_keycode": 280,
+        "x11_keysym": 65365
+      }
+    },
+    "a": {
+      "original": {
+        "sdl_keycode": 97,
+        "x11_keysym": 97
+      },
+      "replacement": {
+        "sdl_keycode": 127,
+        "x11_keysym": 65535
+      }
+    },
+    "s": {
+      "original": {
+        "sdl_keycode": 115,
+        "x11_keysym": 115
+      },
+      "replacement": {
+        "sdl_keycode": 279,
+        "x11_keysym": 65367
+      }
+    },
+    "d": {
+      "original": {
+        "sdl_keycode": 100,
+        "x11_keysym": 100
+      },
+      "replacement": {
+        "sdl_keycode": 281,
+        "x11_keysym": 65366
+      }
+    },
+    "i": {
+      "original": {
+        "sdl_keycode": 105,
+        "x11_keysym": 105
+      },
+      "replacement": {
+        "sdl_keycode": 275,
+        "x11_keysym": 65363
+      }
+    },
+    "j": {
+      "original": {
+        "sdl_keycode": 106,
+        "x11_keysym": 106
+      },
+      "replacement": {
+        "sdl_keycode": 276,
+        "x11_keysym": 65361
+      }
+    },
+    "k": {
+      "original": {
+        "sdl_keycode": 107,
+        "x11_keysym": 107
+      },
+      "replacement": {
+        "sdl_keycode": 274,
+        "x11_keysym": 65364
+      }
+    },
+    "l": {
+      "original": {
+        "sdl_keycode": 108,
+        "x11_keysym": 108
+      },
+      "replacement": {
+        "sdl_keycode": 273,
+        "x11_keysym": 65362
+      }
+    },
+    "z": {
+      "original": {
+        "sdl_keycode": 122,
+        "x11_keysym": 122
+      },
+      "replacement": {
+        "sdl_keycode": 300,
+        "x11_keysym": 65407
+      }
+    },
+    "x": {
+      "original": {
+        "sdl_keycode": 120,
+        "x11_keysym": 120
+      },
+      "replacement": {
+        "sdl_keycode": 267,
+        "x11_keysym": 65455
+      }
+    },
+    "c": {
+      "original": {
+        "sdl_keycode": 99,
+        "x11_keysym": 99
+      },
+      "replacement": {
+        "sdl_keycode": 268,
+        "x11_keysym": 65450
+      }
+    },
+    "lshift": {
+      "original": {
+        "sdl_keycode": 304,
+        "x11_keysym": 65505
+      },
+      "replacement": {
+        "sdl_keycode": 269,
+        "x11_keysym": 45
+      }
+    },
+    "lctrl": {
+      "original": {
+        "sdl_keycode": 306,
+        "x11_keysym": 65507
+      },
+      "replacement": {
+        "sdl_keycode": 270,
+        "x11_keysym": 43
+      }
+    },
+    "up": {
+      "original": {
+        "sdl_keycode": 273,
+        "x11_keysym": 65362
+      },
+      "replacement": {
+        "sdl_keycode": 271,
+        "x11_keysym": 65421
+      }
+    },
+    "down": {
+      "original": {
+        "sdl_keycode": 274,
+        "x11_keysym": 65364
+      },
+      "replacement": {
+        "sdl_keycode": 257,
+        "x11_keysym": 65457
+      }
+    },
+    "left": {
+      "original": {
+        "sdl_keycode": 276,
+        "x11_keysym": 65361
+      },
+      "replacement": {
+        "sdl_keycode": 258,
+        "x11_keysym": 65458
+      }
+    },
+    "right": {
+      "original": {
+        "sdl_keycode": 275,
+        "x11_keysym": 65363
+      },
+      "replacement": {
+        "sdl_keycode": 259,
+        "x11_keysym": 65459
+      }
+    },
+    "enter": {
+      "original": {
+        "sdl_keycode": 271,
+        "x11_keysym": 65293
+      },
+      "replacement": {
+        "sdl_keycode": 260,
+        "x11_keysym": 65460
+      }
+    }
+  }
+}

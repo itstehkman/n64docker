@@ -12,7 +12,7 @@ make run
 
 # How to connect
 
-Connect over VNC to $SERVER_ADDR:5900 to view the n64 display and interact with it!
+Connect over VNC to $SERVER_ADDR:5901 to view the n64 display and interact with it!
 
 # Super Smash Bros
 
@@ -45,9 +45,17 @@ VNC for you, and have any specific client logic needed. Sounds good I think!<br>
 
 Context: Seems like MacOS does not have traditional linux /dev/input devices for keyboard, so trying to do keyboard remapping is difficult in this sense<br>
 Q4: How tf can you remap keys??<br>
-Ideas: To remap the key events sent over VNC (using the RFB - remote fram buffer protocol), one can modify the bytes over the network. Check here for a specification: <https://github.com/rfbproto/rfbproto/blob/master/rfbproto.rst#744keyevent>. I've come across a tool called netsed which can be used as such: [NetSed and iptables proxying](https://serverfault.com/a/321671). The client connects to netsed on the client side, which acts as a proxy and modifies the tcp packets and sends them to the server. <br>
+Ideas: To remap the key events sent over VNC (using the RFB - remote fram buffer protocol), one can modify the bytes over the network. Check here for a specification: <https://github.com/rfbproto/rfbproto/blob/master/rfbproto.rst#744keyevent>. I've come across a tool called netsed which can be used as such: [NetSed and iptables proxying](https://serverfault.com/a/321671). The client connects to netsed on the client side, which acts as a proxy and modifies the tcp packets and sends them to the server. In specific, check Q1 in the answered question for how to deal with different key code types.<br>
 
 Q5: How can this be abstracted for more emulators in the future?<br>
 Ideas: Great question... TBD!
+
+# Answered Questions
+Q1: Wtf is the difference between SDL Keycodes, SDL Scan codes, and X11 Keysyms? Why should I care??<br>
+A: It's a mouthful, I know... When we remap VNC KeyEvents (which use X11 Keysyms),
+we also need to configure the mupen server... which configures each key in mupen64plus.cfg by calling
+key(sdl key code)  to get the SDL Scan code. (see `util/sdl_key_convert.c` for definitions of scan codes).
+And how do SDL Keycodes map to VNC KeyEvents? We'll just have to have a look up table, where the keycodes are
+mapped to each other by the keyboard button it represents - this will allow us to both configure the client proxy and the mupen server's config. <br>
 
 # Roadmap
