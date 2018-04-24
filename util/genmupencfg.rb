@@ -60,7 +60,7 @@ def gen_fmt_array(translations)
   # cpad -> ijkl
    keycode(translations,"l"), keycode(translations, "j"), keycode(translations,"k"), keycode(translations, "i"),
   #r,l
-   keycode(translations,"x"), keycode(translations,"c"),
+   keycode(translations,"c"), keycode(translations,"l"),
    keycode(translations,"left"), keycode(translations,"right"),
    keycode(translations,"up"), keycode(translations,"down")]
 end

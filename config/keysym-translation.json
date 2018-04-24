@@ -238,8 +238,8 @@
         "x11_keysym": 106
       },
       "replacement": {
-        "sdl_keycode": 49,
-        "x11_keysym": 49
+        "sdl_keycode": 13,
+        "x11_keysym": 65293
       }
     },
     "k": {
@@ -248,8 +248,8 @@
         "x11_keysym": 107
       },
       "replacement": {
-        "sdl_keycode": 50,
-        "x11_keysym": 50
+        "sdl_keycode": 8,
+        "x11_keysym": 65288
       }
     },
     "l": {
@@ -258,8 +258,8 @@
         "x11_keysym": 108
       },
       "replacement": {
-        "sdl_keycode": 51,
-        "x11_keysym": 51
+        "sdl_keycode": 9,
+        "x11_keysym": 65289
       }
     },
     "z": {
@@ -268,8 +268,8 @@
         "x11_keysym": 122
       },
       "replacement": {
-        "sdl_keycode": 52,
-        "x11_keysym": 52
+        "sdl_keycode": 32,
+        "x11_keysym": 32
       }
     },
     "x": {
@@ -278,8 +278,8 @@
         "x11_keysym": 120
       },
       "replacement": {
-        "sdl_keycode": 53,
-        "x11_keysym": 53
+        "sdl_keycode": 45,
+        "x11_keysym": 45
       }
     },
     "c": {
@@ -288,8 +288,8 @@
         "x11_keysym": 99
       },
       "replacement": {
-        "sdl_keycode": 54,
-        "x11_keysym": 54
+        "sdl_keycode": 61,
+        "x11_keysym": 61
       }
     },
     "lshift": {
@@ -298,8 +298,8 @@
         "x11_keysym": 65505
       },
       "replacement": {
-        "sdl_keycode": 55,
-        "x11_keysym": 55
+        "sdl_keycode": 92,
+        "x11_keysym": 92
       }
     },
     "lctrl": {
@@ -308,8 +308,8 @@
         "x11_keysym": 65507
       },
       "replacement": {
-        "sdl_keycode": 56,
-        "x11_keysym": 56
+        "sdl_keycode": 59,
+        "x11_keysym": 59
       }
     },
     "up": {
@@ -318,8 +318,8 @@
         "x11_keysym": 65362
       },
       "replacement": {
-        "sdl_keycode": 57,
-        "x11_keysym": 57
+        "sdl_keycode": 44,
+        "x11_keysym": 44
       }
     },
     "down": {
@@ -328,8 +328,8 @@
         "x11_keysym": 65364
       },
       "replacement": {
-        "sdl_keycode": 48,
-        "x11_keysym": 48
+        "sdl_keycode": 46,
+        "x11_keysym": 46
       }
     },
     "left": {
@@ -338,8 +338,8 @@
         "x11_keysym": 65361
       },
       "replacement": {
-        "sdl_keycode": 13,
-        "x11_keysym": 65293
+        "sdl_keycode": 301,
+        "x11_keysym": 65509
       }
     },
     "right": {
@@ -348,8 +348,8 @@
         "x11_keysym": 65363
       },
       "replacement": {
-        "sdl_keycode": 8,
-        "x11_keysym": 65288
+        "sdl_keycode": 282,
+        "x11_keysym": 65470
       }
     },
     "enter": {
@@ -358,8 +358,8 @@
         "x11_keysym": 65293
       },
       "replacement": {
-        "sdl_keycode": 9,
-        "x11_keysym": 65289
+        "sdl_keycode": 283,
+        "x11_keysym": 65471
       }
     }
   },
@@ -370,8 +370,8 @@
         "x11_keysym": 119
       },
       "replacement": {
-        "sdl_keycode": 32,
-        "x11_keysym": 32
+        "sdl_keycode": 284,
+        "x11_keysym": 65472
       }
     },
     "a": {
@@ -380,8 +380,8 @@
         "x11_keysym": 97
       },
       "replacement": {
-        "sdl_keycode": 45,
-        "x11_keysym": 45
+        "sdl_keycode": 285,
+        "x11_keysym": 65473
       }
     },
     "s": {
@@ -390,8 +390,8 @@
         "x11_keysym": 115
       },
       "replacement": {
-        "sdl_keycode": 61,
-        "x11_keysym": 61
+        "sdl_keycode": 287,
+        "x11_keysym": 65475
       }
     },
     "d": {
@@ -400,8 +400,8 @@
         "x11_keysym": 100
       },
       "replacement": {
-        "sdl_keycode": 92,
-        "x11_keysym": 92
+        "sdl_keycode": 289,
+        "x11_keysym": 65477
       }
     },
     "i": {
@@ -410,8 +410,8 @@
         "x11_keysym": 105
       },
       "replacement": {
-        "sdl_keycode": 59,
-        "x11_keysym": 59
+        "sdl_keycode": 292,
+        "x11_keysym": 65480
       }
     },
     "j": {
@@ -420,8 +420,8 @@
         "x11_keysym": 106
       },
       "replacement": {
-        "sdl_keycode": 44,
-        "x11_keysym": 44
+        "sdl_keycode": 19,
+        "x11_keysym": 65299
       }
     },
     "k": {
@@ -430,8 +430,8 @@
         "x11_keysym": 107
       },
       "replacement": {
-        "sdl_keycode": 46,
-        "x11_keysym": 46
+        "sdl_keycode": 277,
+        "x11_keysym": 65379
       }
     },
     "l": {
@@ -440,8 +440,8 @@
         "x11_keysym": 108
       },
       "replacement": {
-        "sdl_keycode": 301,
-        "x11_keysym": 65509
+        "sdl_keycode": 278,
+        "x11_keysym": 65360
       }
     },
     "z": {
@@ -450,8 +450,8 @@
         "x11_keysym": 122
       },
       "replacement": {
-        "sdl_keycode": 282,
-        "x11_keysym": 65470
+        "sdl_keycode": 280,
+        "x11_keysym": 65365
       }
     },
     "x": {
@@ -460,8 +460,8 @@
         "x11_keysym": 120
       },
       "replacement": {
-        "sdl_keycode": 283,
-        "x11_keysym": 65471
+        "sdl_keycode": 127,
+        "x11_keysym": 65535
       }
     },
     "c": {
@@ -470,8 +470,8 @@
         "x11_keysym": 99
       },
       "replacement": {
-        "sdl_keycode": 284,
-        "x11_keysym": 65472
+        "sdl_keycode": 279,
+        "x11_keysym": 65367
       }
     },
     "lshift": {
@@ -480,8 +480,8 @@
         "x11_keysym": 65505
       },
       "replacement": {
-        "sdl_keycode": 285,
-        "x11_keysym": 65473
+        "sdl_keycode": 281,
+        "x11_keysym": 65366
       }
     },
     "lctrl": {
@@ -490,8 +490,8 @@
         "x11_keysym": 65507
       },
       "replacement": {
-        "sdl_keycode": 287,
-        "x11_keysym": 65475
+        "sdl_keycode": 275,
+        "x11_keysym": 65363
       }
     },
     "up": {
@@ -500,8 +500,8 @@
         "x11_keysym": 65362
       },
       "replacement": {
-        "sdl_keycode": 289,
-        "x11_keysym": 65477
+        "sdl_keycode": 276,
+        "x11_keysym": 65361
       }
     },
     "down": {
@@ -510,8 +510,8 @@
         "x11_keysym": 65364
       },
       "replacement": {
-        "sdl_keycode": 292,
-        "x11_keysym": 65480
+        "sdl_keycode": 274,
+        "x11_keysym": 65364
       }
     },
     "left": {
@@ -520,8 +520,8 @@
         "x11_keysym": 65361
       },
       "replacement": {
-        "sdl_keycode": 19,
-        "x11_keysym": 65299
+        "sdl_keycode": 273,
+        "x11_keysym": 65362
       }
     },
     "right": {
@@ -530,8 +530,8 @@
         "x11_keysym": 65363
       },
       "replacement": {
-        "sdl_keycode": 277,
-        "x11_keysym": 65379
+        "sdl_keycode": 300,
+        "x11_keysym": 65407
       }
     },
     "enter": {
@@ -540,8 +540,8 @@
         "x11_keysym": 65293
       },
       "replacement": {
-        "sdl_keycode": 278,
-        "x11_keysym": 65360
+        "sdl_keycode": 267,
+        "x11_keysym": 65455
       }
     }
   },
@@ -552,8 +552,8 @@
         "x11_keysym": 119
       },
       "replacement": {
-        "sdl_keycode": 280,
-        "x11_keysym": 65365
+        "sdl_keycode": 268,
+        "x11_keysym": 65450
       }
     },
     "a": {
@@ -562,8 +562,8 @@
         "x11_keysym": 97
       },
       "replacement": {
-        "sdl_keycode": 127,
-        "x11_keysym": 65535
+        "sdl_keycode": 271,
+        "x11_keysym": 65421
       }
     },
     "s": {
@@ -572,8 +572,8 @@
         "x11_keysym": 115
       },
       "replacement": {
-        "sdl_keycode": 279,
-        "x11_keysym": 65367
+        "sdl_keycode": 257,
+        "x11_keysym": 65457
       }
     },
     "d": {
@@ -582,8 +582,8 @@
         "x11_keysym": 100
       },
       "replacement": {
-        "sdl_keycode": 281,
-        "x11_keysym": 65366
+        "sdl_keycode": 258,
+        "x11_keysym": 65458
       }
     },
     "i": {
@@ -592,8 +592,8 @@
         "x11_keysym": 105
       },
       "replacement": {
-        "sdl_keycode": 275,
-        "x11_keysym": 65363
+        "sdl_keycode": 259,
+        "x11_keysym": 65459
       }
     },
     "j": {
@@ -602,8 +602,8 @@
         "x11_keysym": 106
       },
       "replacement": {
-        "sdl_keycode": 276,
-        "x11_keysym": 65361
+        "sdl_keycode": 260,
+        "x11_keysym": 65460
       }
     },
     "k": {
@@ -612,8 +612,8 @@
         "x11_keysym": 107
       },
       "replacement": {
-        "sdl_keycode": 274,
-        "x11_keysym": 65364
+        "sdl_keycode": 261,
+        "x11_keysym": 65461
       }
     },
     "l": {
@@ -622,8 +622,8 @@
         "x11_keysym": 108
       },
       "replacement": {
-        "sdl_keycode": 273,
-        "x11_keysym": 65362
+        "sdl_keycode": 262,
+        "x11_keysym": 65462
       }
     },
     "z": {
@@ -632,8 +632,8 @@
         "x11_keysym": 122
       },
       "replacement": {
-        "sdl_keycode": 300,
-        "x11_keysym": 65407
+        "sdl_keycode": 263,
+        "x11_keysym": 65463
       }
     },
     "x": {
@@ -642,8 +642,8 @@
         "x11_keysym": 120
       },
       "replacement": {
-        "sdl_keycode": 267,
-        "x11_keysym": 65455
+        "sdl_keycode": 264,
+        "x11_keysym": 65464
       }
     },
     "c": {
@@ -652,8 +652,8 @@
         "x11_keysym": 99
       },
       "replacement": {
-        "sdl_keycode": 268,
-        "x11_keysym": 65450
+        "sdl_keycode": 265,
+        "x11_keysym": 65465
       }
     },
     "lshift": {
@@ -662,8 +662,8 @@
         "x11_keysym": 65505
       },
       "replacement": {
-        "sdl_keycode": 269,
-        "x11_keysym": 45
+        "sdl_keycode": 256,
+        "x11_keysym": 65456
       }
     },
     "lctrl": {
@@ -672,8 +672,8 @@
         "x11_keysym": 65507
       },
       "replacement": {
-        "sdl_keycode": 270,
-        "x11_keysym": 43
+        "sdl_keycode": 272,
+        "x11_keysym": 65469
       }
     },
     "up": {
@@ -682,8 +682,8 @@
         "x11_keysym": 65362
       },
       "replacement": {
-        "sdl_keycode": 271,
-        "x11_keysym": 65421
+        "sdl_keycode": 315,
+        "x11_keysym": 65386
       }
     },
     "down": {
@@ -692,8 +692,8 @@
         "x11_keysym": 65364
       },
       "replacement": {
-        "sdl_keycode": 257,
-        "x11_keysym": 65457
+        "sdl_keycode": 306,
+        "x11_keysym": 65507
       }
     },
     "left": {
@@ -702,8 +702,8 @@
         "x11_keysym": 65361
       },
       "replacement": {
-        "sdl_keycode": 258,
-        "x11_keysym": 65458
+        "sdl_keycode": 304,
+        "x11_keysym": 65505
       }
     },
     "right": {
@@ -712,8 +712,8 @@
         "x11_keysym": 65363
       },
       "replacement": {
-        "sdl_keycode": 259,
-        "x11_keysym": 65459
+        "sdl_keycode": 311,
+        "x11_keysym": 65515
       }
     },
     "enter": {
@@ -722,8 +722,8 @@
         "x11_keysym": 65293
       },
       "replacement": {
-        "sdl_keycode": 260,
-        "x11_keysym": 65460
+        "sdl_keycode": 305,
+        "x11_keysym": 65508
       }
     }
   }

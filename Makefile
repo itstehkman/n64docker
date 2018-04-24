@@ -1,4 +1,4 @@
-.PHONY: build run run-client mupen-config client-config stop-client stop
+.PHONY: build run run-client mupen-config client-config stop-client stop rm rm-client
 
 BASH := $(shell which bash)
 SHELL := $(BASH)
@@ -26,7 +26,7 @@ run-client: .network
 run-bash:
 	docker run -it -p '5901:5900' --net $(NETWORK_NAME) --name $(CLIENT_CONTAINER_NAME) --privileged -e "SERVER" -e "PLAYER_NUM" $(CLIENT_IMAGE_NAME) bash
 
-stop-client:
+rm-client:
 	docker rm $(CLIENT_CONTAINER_NAME)
 
 rm:
