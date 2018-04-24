@@ -21,13 +21,17 @@ run: .network mupen-config
 	docker run -it -p '5900:5900' --net $(NETWORK_NAME) --name $(SERVER_CONTAINER_NAME) --privileged $(SERVER_IMAGE_NAME)
 
 run-client: .network
-	docker run -it -p '5901:5900' --net $(NETWORK_NAME) --name $(CLIENT_CONTAINER_NAME) --privileged -e "SERVER=$(SERVER_CONTAINER_NAME)" -e "PLAYER_NUM" $(CLIENT_IMAGE_NAME)
+	docker run -it -p '5901:5900' --net $(NETWORK_NAME) --name $(CLIENT_CONTAINER_NAME) --privileged -e "SERVER" -e "PLAYER_NUM" $(CLIENT_IMAGE_NAME)
 
 run-bash:
-	docker run -it -p '5901:5900' --net $(NETWORK_NAME) --name $(CLIENT_CONTAINER_NAME) --privileged -e "SERVER=$(SERVER_CONTAINER_NAME)" -e "PLAYER_NUM" $(CLIENT_IMAGE_NAME) bash
+	docker run -it -p '5901:5900' --net $(NETWORK_NAME) --name $(CLIENT_CONTAINER_NAME) --privileged -e "SERVER" -e "PLAYER_NUM" $(CLIENT_IMAGE_NAME) bash
 
 stop-client:
 	docker rm $(CLIENT_CONTAINER_NAME)
 
+rm:
+	docker rm $(CLIENT_CONTAINER_NAME) $(SERVER_CONTAINER_NAME)
+
 stop:
-	docker rm $(CLIENT_CONTAINER_NAME) || docker rm $(SERVER_CONTAINER_NAME)
+	docker kill $(CLIENT_CONTAINER_NAME) $(SERVER_CONTAINER_NAME)
+	$(MAKE) rm

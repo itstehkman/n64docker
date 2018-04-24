@@ -20,7 +20,7 @@ COPY config/xorg.conf /etc/X11/xorg.conf
 
 ENV DISPLAY :0
 
-COPY config/mupen64plus.test.cfg /config/mupen64plus/mupen64plus.cfg
+COPY config/mupen64plus.cfg /config/mupen64plus/mupen64plus.cfg
 
 CMD startx & sleep 3 && \
     x11vnc -forever -usepw -shared & sleep 3 && \
