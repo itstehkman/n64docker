@@ -17,11 +17,17 @@ build: mupen-config
 	docker build -t $(SERVER_IMAGE_NAME) . -f Dockerfile.server
 	docker build -t $(CLIENT_IMAGE_NAME) . -f Dockerfile.client
 
-run: .network mupen-config
-	docker run -it -p '5900:5900' --net $(NETWORK_NAME) --name $(SERVER_CONTAINER_NAME) --privileged $(SERVER_IMAGE_NAME)
+run: .network
+	docker run -d -p '5900:5900' --net $(NETWORK_NAME) --name $(SERVER_CONTAINER_NAME) $(SERVER_IMAGE_NAME)
 
-run-client: .network
-	docker run -it -p '5901:5900' --net $(NETWORK_NAME) --name $(CLIENT_CONTAINER_NAME) --privileged -e "SERVER" -e "PLAYER_NUM" $(CLIENT_IMAGE_NAME)
+run-proxy: .network
+	docker run -d -p $(CLIENT_PORT):5900 --net $(NETWORK_NAME) --privileged -e "SERVER" -e "PLAYER_NUM" $(CLIENT_IMAGE_NAME)
+
+run-proxies: .network
+	export PLAYER_NUM=1 && export CLIENT_PORT=5901 && export && $(MAKE) run-proxy
+	export PLAYER_NUM=2 && export CLIENT_PORT=5902 && export && $(MAKE) run-proxy
+	export PLAYER_NUM=3 && export CLIENT_PORT=5903 && export && $(MAKE) run-proxy
+	export PLAYER_NUM=4 && export CLIENT_PORT=5904 && export && $(MAKE) run-proxy
 
 run-bash:
 	docker run -it -p '5901:5900' --net $(NETWORK_NAME) --name $(CLIENT_CONTAINER_NAME) --privileged -e "SERVER" -e "PLAYER_NUM" $(CLIENT_IMAGE_NAME) bash
@@ -30,8 +36,8 @@ rm-client:
 	docker rm $(CLIENT_CONTAINER_NAME)
 
 rm:
-	docker rm $(CLIENT_CONTAINER_NAME) $(SERVER_CONTAINER_NAME)
+	docker rm `docker ps -a | grep $(IMAGE_NAME_BASE) | awk '{print $$1}'`
 
 stop:
-	docker kill $(CLIENT_CONTAINER_NAME) $(SERVER_CONTAINER_NAME)
+	docker kill `docker ps -a | grep $(IMAGE_NAME_BASE) | awk '{print $$1}'`
 	$(MAKE) rm
