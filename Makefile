@@ -41,3 +41,9 @@ rm:
 stop:
 	docker kill `docker ps -a | grep $(IMAGE_NAME_BASE) | awk '{print $$1}'`
 	$(MAKE) rm
+
+push:
+	docker tag $(SERVER_IMAGE_NAME) itstehkman/$(SERVER_IMAGE_NAME)
+	docker tag $(CLIENT_IMAGE_NAME) itstehkman/$(CLIENT_IMAGE_NAME)
+	docker push itstehkman/$(SERVER_IMAGE_NAME)
+	docker push itstehkman/$(CLIENT_IMAGE_NAME)
