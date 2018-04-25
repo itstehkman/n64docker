@@ -242,6 +242,9 @@ struct tracker_s * connections = NULL;
 /// True when SIGINT signal was received.
 volatile int stop=0;
 
+// If all rules follow the same direction, this is what it is
+int all_dir = ALL;
+
 /// Display an error message followed by short usage information.
 /// @param why the error message.
 void short_usage_hints(const char* why) {
@@ -529,7 +532,7 @@ void parse_params(int argc,char* argv[]) {
     if (cs && *cs && strchr("iIoO", *cs)) {
         rule[rules].dir = (*cs=='i'||*cs=='I') ? IN : OUT;
         cs++;
-      }
+    }
     if (cs && *cs) /* Only non-trivial quantifiers count. */
       rule_live[rules]=atoi(cs); else rule_live[rules]=-1;
     shrink_to_binary(&rule[rules]);
@@ -537,6 +540,15 @@ void parse_params(int argc,char* argv[]) {
     rules++;
   }
 
+  if (rules > 0) {
+    all_dir = rule[0].dir;
+    for (i = 1; i < rules; i++) {
+      if (rule[i].dir != all_dir) {
+        all_dir = ALL;
+      }
+    }
+  }
+  printf("All dir: %d\n", all_dir);
   printf("[+] Loaded %d rule%s...\n", rules, (rules > 1) ? "s" : "");
 
 }
@@ -608,6 +620,10 @@ int sed_the_buffer(int siz, int* live, int dir) {
   int newsize=0;
   int changes=0;
   int gotchange=0;
+  if (dir != all_dir) {
+    memcpy(b2, buf, siz);
+    return siz;
+  }
   for (i=0;i<siz;) {
     gotchange=0;
     for (j=0;j<rules;j++) {
