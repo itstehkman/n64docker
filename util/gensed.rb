@@ -12,8 +12,8 @@ PLAYER_NUM = ENV.fetch("PLAYER_NUM", "1")
 # Key sym codes can be found here: https://www.cl.cam.ac.uk/~mgk25/ucs/keysymdef.h
 
 # \x04 = key event code, \x00 = off, 2 bytes padding (usually null bytes), 4 bytes keysym (network order -> big endian)
-off_format = "s/%%04%%00%%00%%00%%00%%00%s/%%04%%00%%00%%00%%00%%00%s"
-on_format =  "s/%%04%%01%%00%%00%%00%%00%s/%%04%%01%%00%%00%%00%%00%s"
+off_format = "s/%%04%%00%%00%%00%%00%%00%s/%%04%%00%%00%%00%%00%%00%s/O"
+on_format =  "s/%%04%%01%%00%%00%%00%%00%s/%%04%%01%%00%%00%%00%%00%s/O"
 
 def netsed_short_str(i)
   x = "%04x" % i
