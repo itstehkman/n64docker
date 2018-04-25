@@ -21,7 +21,7 @@ run: .network
 	docker run -d -p '5900:5900' --net $(NETWORK_NAME) --name $(SERVER_CONTAINER_NAME) $(SERVER_IMAGE_NAME)
 
 run-proxy: .network
-	docker run -d -p $(CLIENT_PORT):5900 --net $(NETWORK_NAME) --privileged -e "SERVER" -e "PLAYER_NUM" $(CLIENT_IMAGE_NAME)
+	docker run -d -p $(CLIENT_PORT):5900 --net $(NETWORK_NAME) --name $(CLIENT_CONTAINER_NAME)-$(PLAYER_NUM) --privileged -e "SERVER" -e "PLAYER_NUM" $(CLIENT_IMAGE_NAME)
 
 run-proxies: .network
 	export PLAYER_NUM=1 && export CLIENT_PORT=5901 && export && $(MAKE) run-proxy
@@ -30,10 +30,11 @@ run-proxies: .network
 	export PLAYER_NUM=4 && export CLIENT_PORT=5904 && export && $(MAKE) run-proxy
 
 run-bash:
-	docker run -it -p '5901:5900' --net $(NETWORK_NAME) --name $(CLIENT_CONTAINER_NAME) --privileged -e "SERVER" -e "PLAYER_NUM" $(CLIENT_IMAGE_NAME) bash
+	docker run -it -p 5901:5900 --net $(NETWORK_NAME) --name $(CLIENT_CONTAINER_NAME)-1 --privileged -e "SERVER" -e "PLAYER_NUM" $(CLIENT_IMAGE_NAME) bash
 
-rm-client:
-	docker rm $(CLIENT_CONTAINER_NAME)
+stop-client:
+	docker kill $(CLIENT_CONTAINER_NAME)-1 $(CLIENT_CONTAINER_NAME)-2 $(CLIENT_CONTAINER_NAME)-3 $(CLIENT_CONTAINER_NAME)-4
+	docker rm $(CLIENT_CONTAINER_NAME)-1 $(CLIENT_CONTAINER_NAME)-2 $(CLIENT_CONTAINER_NAME)-3 $(CLIENT_CONTAINER_NAME)-4
 
 rm:
 	docker rm `docker ps -a | grep $(IMAGE_NAME_BASE) | awk '{print $$1}'`
