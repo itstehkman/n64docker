@@ -63,3 +63,13 @@ And how do SDL Keycodes map to VNC KeyEvents? We'll just have to have a look up 
 mapped to each other by the keyboard button it represents - this will allow us to both configure the client proxy and the mupen server's config. <br>
 
 # Roadmap
+- NoVNC working (p0)
+  - [x] Container that runs NoVNC webserver
+- Good way of provisioning / deploying / serving for scale : (p0)
+  - [ ] Draw architecture diagram
+- Nintendo Switch controllers to work (p1)
+  - [ ] Need to make sure vnc client / server accept gii, which allows joystick
+  - [ ] Play locally, not sending key events over VNC
+- Matchmaking (p1)
+  o There's two modes: matchmake, and share link. Version 0 includes just sharing a link to play
+- Performance monitoring / why did I choose noVNC (p0.5)

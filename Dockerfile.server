@@ -23,5 +23,5 @@ ENV DISPLAY :0
 COPY config/mupen64plus.cfg /config/mupen64plus/mupen64plus.cfg
 
 CMD startx & sleep 3 && \
-    x11vnc -forever -usepw -shared & sleep 3 && \
+    x11vnc -repeat -forever -usepw -shared & sleep 3 && \
     /usr/games/mupen64plus --configdir /config/mupen64plus --fullscreen smash.z64

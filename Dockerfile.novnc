@@ -1,0 +1,19 @@
+FROM ubuntu
+
+RUN apt-get update
+
+RUN apt-get install -y git
+
+RUN git clone https://github.com/novnc/noVNC
+
+WORKDIR /noVNC
+
+RUN git clone https://github.com/novnc/websockify
+
+RUN apt install -y net-tools python
+
+RUN ln -s $(pwd)/websockify/run /usr/bin/websockify
+
+EXPOSE 8001-8004
+
+CMD ./utils/launch.sh --vnc $SERVER:$PORT
