@@ -22,23 +22,29 @@ build: mupen-config
 
 run-all:
 	$(MAKE) run
-	export PLAYER_NUM=1 && export && $(MAKE) run-proxy
-	export PLAYER_NUM=1 && export && $(MAKE) run-novnc
+	export PLAYER_NUM=1 && export && $(MAKE) run-proxies
+	export PLAYER_NUM=1 && export && $(MAKE) run-novncs
 
 run: .network
 	docker run -d -p '5900:5900' --net $(NETWORK_NAME) --name $(SERVER_CONTAINER_NAME) $(SERVER_IMAGE_NAME)
 
 run-proxy: .network
-	docker run -d -p $(CLIENT_PORT):5900 --net $(NETWORK_NAME) --privileged -e "SERVER" -e "PLAYER_NUM" --name $(CLIENT_CONTAINER_NAME)-proxy-$(PLAYER_NUM) $(CLIENT_IMAGE_NAME)
+	docker run -d -p $(CLIENT_PORT):$(CLIENT_PORT) --net $(NETWORK_NAME) --privileged -e "SERVER" -e "PLAYER_NUM" --name $(CLIENT_CONTAINER_NAME)-proxy-$(PLAYER_NUM) $(CLIENT_IMAGE_NAME)
 
 run-proxies: .network
-	export PLAYER_NUM=1 && export CLIENT_PORT=5901 && export && $(MAKE) run-proxy
-	export PLAYER_NUM=2 && export CLIENT_PORT=5902 && export && $(MAKE) run-proxy
-	export PLAYER_NUM=3 && export CLIENT_PORT=5903 && export && $(MAKE) run-proxy
-	export PLAYER_NUM=4 && export CLIENT_PORT=5904 && export && $(MAKE) run-proxy
+	export PLAYER_NUM=1 && export && $(MAKE) run-proxy
+	export PLAYER_NUM=2 && export && $(MAKE) run-proxy
+	export PLAYER_NUM=3 && export && $(MAKE) run-proxy
+	export PLAYER_NUM=4 && export && $(MAKE) run-proxy
 
 run-novnc: .network
-	docker run -it -p 6080:6080 --net $(NETWORK_NAME) -e "SERVER=$(CLIENT_CONTAINER_NAME)-proxy-$(PLAYER_NUM)" -e PORT=5900 $(NOVNC_IMAGE_NAME)
+	docker run -d -p $(NOVNCPORT):$(NOVNCPORT) --net $(NETWORK_NAME) -e "SERVER=$(CLIENT_CONTAINER_NAME)-proxy-$(PLAYER_NUM)" -e "PLAYER_NUM"  --name $(NOVNC_CONTAINER_NAME)-$(PLAYER_NUM) $(NOVNC_IMAGE_NAME)
+
+run-novncs: .network
+	export PLAYER_NUM=1 && export && $(MAKE) run-novnc
+	export PLAYER_NUM=2 && export && $(MAKE) run-novnc
+	export PLAYER_NUM=3 && export && $(MAKE) run-novnc
+	export PLAYER_NUM=4 && export && $(MAKE) run-novnc
 
 run-bash:
 	docker run -it -p 5901:5900 --net $(NETWORK_NAME) --name $(CLIENT_CONTAINER_NAME)-1 --privileged -e "SERVER" -e "PLAYER_NUM" $(CLIENT_IMAGE_NAME) bash

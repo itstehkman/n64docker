@@ -18,4 +18,4 @@ EXPOSE 8001-8004
 
 EXPOSE 6080
 
-CMD ./utils/launch.sh --vnc $SERVER:$PORT
+CMD ./utils/launch.sh --listen `expr 8000 + $PLAYER_NUM` --vnc $SERVER:`expr 5900 + $PLAYER_NUM`

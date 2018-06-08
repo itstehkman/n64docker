@@ -7,21 +7,14 @@ and let them have at it. There is potential for an MMR system here too.
 # Build and Deploy
 ```
 make build
-make run
+make run-all
 ```
 
 # How to connect
 
-```
-export PLAYER_NUM=[1|2|3|4]
-make run-proxy
-make run-novnc
-```
+If you want to connect over VNC, go to `http://$SERVER:<8000 + $PLAYER_NUM>/vnc.html` to use the web client.
 
-Or just run this to run both server and client (player 1 only)
-```
-make run-all
-```
+Or connect using a traditional VNC client, like Screen Sharing or VNC Viewer (recommended) and connect to `$SERVER:<5900 + $PLAYER_NUM>`
 
 # Super Smash Bros
 
