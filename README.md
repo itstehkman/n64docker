@@ -12,11 +12,16 @@ make run
 
 # How to connect
 
-Run
 ```
-make run-client
+export PLAYER_NUM=[1|2|3|4]
+make run-proxy
+make run-novnc
 ```
-To run your client and connect to the localhost (which acts as a transparent proxy, and modifies network traffic), over VNC on port 5901 to view the n64 display and interact with it! You can do this with Screen Sharing (built in app on MacOS)
+
+Or just run this to run both server and client (player 1 only)
+```
+make run-all
+```
 
 # Super Smash Bros
 
@@ -40,12 +45,6 @@ get around this is to mount via ssh (using sshfs) the user's joystick input dire
 This could be tricky - which user is which joystick number, and how do you handle part joystick, part keyboard configs?
 Seems that this could be up to some matchmaking software.
 
-Q3: How can this support several different environments that clients are connecting from?<br>
-Ideas:
-One might be connecting from MacOS, Linux, Windows, something else, or any specific flavor of these.
-An idea to get around this is to make clients connect via a docker container - that way all clients have the same interface,
-and no environment-specific software or configuration is needed. This docker container could do the keyboard mapping, connect to
-VNC for you, and have any specific client logic needed. Sounds good I think!<br>
 
 Context: Seems like MacOS does not have traditional linux /dev/input devices for keyboard, so trying to do keyboard remapping is difficult in this sense<br>
 Q4: How tf can you remap keys??<br>
@@ -61,6 +60,9 @@ we also need to configure the mupen server... which configures each key in mupen
 key(sdl key code)  to get the SDL Scan code. (see `util/sdl_key_convert.c` for definitions of scan codes).
 And how do SDL Keycodes map to VNC KeyEvents? We'll just have to have a look up table, where the keycodes are
 mapped to each other by the keyboard button it represents - this will allow us to both configure the client proxy and the mupen server's config. <br>
+
+Q2: How can this support several different environments that clients are connecting from?<br>
+The noVNC client allows you to use the browser to play - that is environment agnostic!
 
 # Roadmap
 - NoVNC working (p0)

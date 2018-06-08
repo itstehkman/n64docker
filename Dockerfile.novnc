@@ -16,4 +16,6 @@ RUN ln -s $(pwd)/websockify/run /usr/bin/websockify
 
 EXPOSE 8001-8004
 
+EXPOSE 6080
+
 CMD ./utils/launch.sh --vnc $SERVER:$PORT

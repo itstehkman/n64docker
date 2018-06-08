@@ -9,7 +9,7 @@ include .env
 
 .network:
 	docker network create ${NETWORK_NAME}
-	echo " " > .network
+	touch .network
 
 mupen-config:
 	ruby util/gentranslation.rb > config/keysym-translation.json
@@ -19,6 +19,11 @@ build: mupen-config
 	docker build -t $(SERVER_IMAGE_NAME) . -f Dockerfile.server
 	docker build -t $(CLIENT_IMAGE_NAME) . -f Dockerfile.client
 	docker build -t $(NOVNC_IMAGE_NAME) . -f Dockerfile.novnc
+
+run-all:
+	$(MAKE) run
+	export PLAYER_NUM=1 && export && $(MAKE) run-proxy
+	export PLAYER_NUM=1 && export && $(MAKE) run-novnc
 
 run: .network
 	docker run -d -p '5900:5900' --net $(NETWORK_NAME) --name $(SERVER_CONTAINER_NAME) $(SERVER_IMAGE_NAME)
@@ -33,13 +38,14 @@ run-proxies: .network
 	export PLAYER_NUM=4 && export CLIENT_PORT=5904 && export && $(MAKE) run-proxy
 
 run-novnc: .network
-	docker run -it -p 6080:6080 --net $(NETWORK_NAME) -e "SERVER=$(CLIENT_CONTAINER_NAME)-proxy-$(PLAYER_NUM)" -e PORT=$(CLIENT_PORT) $(NOVNC_IMAGE_NAME)
+	docker run -it -p 6080:6080 --net $(NETWORK_NAME) -e "SERVER=$(CLIENT_CONTAINER_NAME)-proxy-$(PLAYER_NUM)" -e PORT=5900 $(NOVNC_IMAGE_NAME)
 
 run-bash:
-	docker run -it -p '5901:5900' --net $(NETWORK_NAME) --name $(CLIENT_CONTAINER_NAME) --privileged -e "SERVER" -e "PLAYER_NUM" $(CLIENT_IMAGE_NAME) bash
+	docker run -it -p 5901:5900 --net $(NETWORK_NAME) --name $(CLIENT_CONTAINER_NAME)-1 --privileged -e "SERVER" -e "PLAYER_NUM" $(CLIENT_IMAGE_NAME) bash
 
-rm-client:
-	docker rm $(CLIENT_CONTAINER_NAME)
+stop-client:
+	docker kill $(CLIENT_CONTAINER_NAME)-1 $(CLIENT_CONTAINER_NAME)-2 $(CLIENT_CONTAINER_NAME)-3 $(CLIENT_CONTAINER_NAME)-4
+	docker rm $(CLIENT_CONTAINER_NAME)-1 $(CLIENT_CONTAINER_NAME)-2 $(CLIENT_CONTAINER_NAME)-3 $(CLIENT_CONTAINER_NAME)-4
 
 rm:
 	docker rm `docker ps -a | grep $(IMAGE_NAME_BASE) | awk '{print $$1}'`
