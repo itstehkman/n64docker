@@ -245,6 +245,9 @@ volatile int stop=0;
 // If all rules follow the same direction, this is what it is
 int all_dir = ALL;
 
+// If any changes happened to the buffer
+int changes = 0;
+
 /// Display an error message followed by short usage information.
 /// @param why the error message.
 void short_usage_hints(const char* why) {
@@ -615,13 +618,14 @@ char b2[MAX_BUF];
 /// @param siz useful size of the data in buf.
 /// @param live TTL state of current connection.
 /// @param packet direction
+/// @return new buffer size
 int sed_the_buffer(int siz, int* live, int dir) {
   int i=0,j=0;
   int newsize=0;
-  int changes=0;
   int gotchange=0;
+  changes=0;
   if (dir != all_dir) {
-    memcpy(b2, buf, siz);
+    printf("[*] Forwarding untouched packet of size %d.\n",siz);
     return siz;
   }
   for (i=0;i<siz;) {
@@ -677,9 +681,10 @@ void server2client_sed(struct tracker_s * conn) {
     if (rd>0) {
       printf("[+] Caught server -> client packet.\n");
       rd=sed_the_buffer(rd, conn->live, IN);
+      char *send = (changes == 0) ? buf : b2;
       conn->time = now;
       conn->state = ESTABLISHED;
-      if (sendto(conn->csock,b2,rd,0,conn->csa, conn->csl)<=0) {
+      if (sendto(conn->csock,send,rd,0,conn->csa, conn->csl)<=0) {
         DBG("[!] client disconnected. (wr)\n");
         conn->state = DISCONNECTED;
       }
@@ -711,8 +716,9 @@ void b2server_sed(struct tracker_s * conn, ssize_t rd) {
     if (rd>0) {
       printf("[+] Caught client -> server packet.\n");
       rd=sed_the_buffer(rd, conn->live, OUT);
+      char *send = (changes == 0) ? buf : b2;
       conn->time = now;
-      if (write(conn->fsock,b2,rd)<=0) {
+      if (write(conn->fsock,send,rd)<=0) {
         DBG("[!] server disconnected. (wr)\n");
         conn->state = DISCONNECTED;
       }
