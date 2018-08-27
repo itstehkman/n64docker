@@ -1,0 +1,119 @@
+version: '2'
+services:
+  n64:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    networks:
+      - net
+    ports:
+      - "5900:5900"
+
+  proxy1:
+    depends_on:
+      - n64
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    networks:
+      - net
+    ports:
+      - "5901:5901"
+    environment:
+      SERVER: n64
+      PLAYER_NUM: 1
+  proxy2:
+    depends_on:
+      - n64
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    networks:
+      - net
+    ports:
+      - "5902:5902"
+    environment:
+      SERVER: n64
+      PLAYER_NUM: 2
+  proxy3:
+    depends_on:
+      - n64
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    networks:
+      - net
+    ports:
+      - "5903:5903"
+    environment:
+      SERVER: n64
+      PLAYER_NUM: 3
+  proxy4:
+    depends_on:
+      - n64
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    networks:
+      - net
+    ports:
+      - "5904:5904"
+    environment:
+      SERVER: n64
+      PLAYER_NUM: 4
+
+  novnc1:
+    depends_on:
+      - proxy1
+    build:
+      context: .
+      dockerfile: Dockerfile.novnc
+    networks:
+      - net
+    ports:
+      - "8001:8001"
+    environment:
+      SERVER: proxy1
+      PLAYER_NUM: 1
+  novnc2:
+    depends_on:
+      - proxy2
+    build:
+      context: .
+      dockerfile: Dockerfile.novnc
+    networks:
+      - net
+    ports:
+      - "8002:8002"
+    environment:
+      SERVER: proxy2
+      PLAYER_NUM: 2
+  novnc3:
+    depends_on:
+      - proxy3
+    build:
+      context: .
+      dockerfile: Dockerfile.novnc
+    networks:
+      - net
+    ports:
+      - "8003:8003"
+    environment:
+      SERVER: proxy3
+      PLAYER_NUM: 3
+  novnc4:
+    depends_on:
+      - proxy4
+    build:
+      context: .
+      dockerfile: Dockerfile.novnc
+    networks:
+      - net
+    ports:
+      - "8004:8004"
+    environment:
+      SERVER: proxy4
+      PLAYER_NUM: 4
+
+networks:
+  net:
